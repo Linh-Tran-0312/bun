@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   build: {
     minify: 'esbuild', // Use fast minification
-    outDir: '../server/assets/',
+    outDir: '../elysia-app/assets/',
     emptyOutDir: true, // Clears previous build files
     rollupOptions: {
         input: './index.html',
