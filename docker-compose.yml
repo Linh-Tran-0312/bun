@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  react:
+    container_name: bun-react
+    image: oven/bun:1-alpine
+    user: bun
+    working_dir: /home/bun/app
+    build:
+      context: ./react
+    ports:
+      - 3000:3000
+    volumes:
+      - ./react:/app
+    stdin_open: true
+    tty: true
+  elysia:
+    container_name: bun-elysia
+    user: bun
+    working_dir: /home/bun/app
+    build:
+      context: ./elysia-app
+    ports:
+      - 3100:3100
+    volumes:
+      - ./elysia-app:/app
+    stdin_open: true
+    tty: true
